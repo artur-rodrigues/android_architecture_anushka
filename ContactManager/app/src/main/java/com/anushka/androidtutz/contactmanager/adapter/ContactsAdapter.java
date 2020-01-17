@@ -59,15 +59,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
         holder.name.setText(contact.getName());
         holder.emil.setText(contact.getEmail());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-
-
-            @Override
-            public void onClick(View v) {
-
-                mainActivity.addAndEditContacts(true, contact, position);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> mainActivity.addAndEditContacts(true, contact, position));
 
     }
 
