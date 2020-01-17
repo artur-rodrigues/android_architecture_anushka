@@ -1,17 +1,16 @@
 package com.anushka.androidtutz.bindingdemo1;
 
+import android.support.annotation.NonNull;
+
 public class Student {
+
+    private String studentName;
+    private String studentEmail;
 
     public Student(String studentName, String studentEmail) {
         this.studentName = studentName;
         this.studentEmail = studentEmail;
     }
-
-    public Student() {
-    }
-
-    private String studentName;
-    private String studentEmail;
 
     public String getStudentName() {
         return studentName;
@@ -27,5 +26,11 @@ public class Student {
 
     public void setStudentEmail(String studentEmail) {
         this.studentEmail = studentEmail;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Nome: " + studentName + ". Email: " + studentEmail;
     }
 }

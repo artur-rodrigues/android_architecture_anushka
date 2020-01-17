@@ -1,36 +1,35 @@
 package com.anushka.androidtutz.bindingdemo1;
 
+import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import com.anushka.androidtutz.bindingdemo1.databinding.ActivityMainBinding;
+import com.anushka.androidtutz.bindingdemo1.event.StudentClick;
 
 public class MainActivity extends AppCompatActivity {
-
-    private TextView nameText;
-    private TextView emailText;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setStudent(new Student("Alex",  "alex@gmail.com"));
+        binding.setStudentEvent(new StudentClick() {
 
-        nameText=findViewById(R.id.tvStudentName);
-        emailText=findViewById(R.id.tvStudentEmail);
+            @Override
+            public void enroll(Student student) {
+                makeToast(student.toString());
+            }
 
-        nameText.setText(getCurrentStudent().getStudentName());
-        emailText.setText(getCurrentStudent().getStudentEmail());
-
-
+            @Override
+            public void cancel() {
+                makeToast("Cancelado");
+            }
+        });
     }
 
-    private Student getCurrentStudent(){
-
-        Student student = new Student();
-        student.setStudentName("Alex");
-        student.setStudentEmail("alex@gmail.com");
-        return student;
-
+    private void makeToast(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 }
