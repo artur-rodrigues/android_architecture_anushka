@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvStudents.apply {
             layoutManager = LinearLayoutManager(context)
             this.adapter = this@MainActivity.adapter
+            setHasFixedSize(true)
             itemAnimator = DefaultItemAnimator()
             ItemTouchHelper(TouchHelperCallback(this@MainActivity.adapter){
                 removeStudent(it)
