@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="student"
+            type="com.example.model.Student" />
+    </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,7 +16,7 @@
             android:id="@+id/labelName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name"
+            android:text="@{student.name}"
             android:textSize="20sp"
             android:textStyle="bold"
             />
@@ -20,7 +25,7 @@
             android:id="@+id/labelEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
+            android:text="@{student.email}"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -35,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/country"
+                android:text="@{student.country}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
@@ -43,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/time"
+                android:text="@{student.registeredTime}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         </LinearLayout>

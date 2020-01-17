@@ -2,8 +2,8 @@ package com.example.studentregistration
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             }).attachToRecyclerView(this)
         }
 
-        binding.fab.setOnClickListener {
+        binding.studentEvent = Runnable {
             startActivityForResult(Intent(this, AddNewStudentActivity::class.java), REQUEST_CODE)
         }
 

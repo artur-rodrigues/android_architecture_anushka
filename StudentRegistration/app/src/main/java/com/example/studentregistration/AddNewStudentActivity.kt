@@ -18,7 +18,7 @@ import java.util.*
 
 class AddNewStudentActivity: AppCompatActivity() {
 
-    lateinit var bind: ActivityAddNewStudentBinding
+    private lateinit var bind: ActivityAddNewStudentBinding
     private lateinit var dataBase: StudentDataBase
     private lateinit var dao: StudentDao
     private lateinit var disposable: Disposable

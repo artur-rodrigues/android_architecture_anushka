@@ -18,7 +18,8 @@ class StudentDataAdapter : RecyclerView.Adapter<StudentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StudentViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate<StudentListItemBinding>(inflater, R.layout.student_list_item, parent, false)
+        val binding = DataBindingUtil
+            .inflate<StudentListItemBinding>(inflater, R.layout.student_list_item, parent, false)
         return StudentViewHolder(binding)
     }
 
@@ -49,13 +50,14 @@ class StudentViewHolder(private val binding: StudentListItemBinding):
     RecyclerView.ViewHolder(binding.root) {
 
     fun bind(student: Student) {
-        with(binding) {
+        binding.student = student
+        /*with(binding) {
             with(student) {
                 labelName.text = name
                 labelEmail.text = email
                 labelCountry.text = country
                 labelTime.text = registeredTime
             }
-        }
+        }*/
     }
 }
