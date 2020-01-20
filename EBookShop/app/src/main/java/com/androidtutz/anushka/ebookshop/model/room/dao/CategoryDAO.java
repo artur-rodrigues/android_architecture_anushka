@@ -1,12 +1,12 @@
-package com.androidtutz.anushka.ebookshop.model;
+package com.androidtutz.anushka.ebookshop.model.room.dao;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
-import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+
+import com.androidtutz.anushka.ebookshop.model.entities.Category;
 
 import java.util.List;
 
@@ -23,5 +23,5 @@ public interface CategoryDAO {
     void delete(Category category);
 
     @Query("SELECT * FROM categories_table")
-    LiveData<List<Category>> getAllCategories();
+    List<Category> getAllCategories();
 }

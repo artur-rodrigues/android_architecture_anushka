@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.ebookshop.model;
+package com.androidtutz.anushka.ebookshop.model.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -9,12 +9,15 @@ import android.databinding.Bindable;
 
 import com.androidtutz.anushka.ebookshop.BR;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 import static android.arch.persistence.room.ForeignKey.CASCADE;
 
 @Entity(tableName = "books_table",foreignKeys = @ForeignKey(entity = Category.class,
         parentColumns = "id",childColumns = "category_id",onDelete = CASCADE))
 
-public class Book extends BaseObservable {
+public class Book extends BaseObservable implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "book_id")
@@ -83,5 +86,19 @@ public class Book extends BaseObservable {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return bookId == book.bookId &&
+                categoryId == book.categoryId &&
+                bookName.equals(book.bookName) &&
+                unitPrice.equals(book.unitPrice);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookId, bookName, unitPrice, categoryId);
+    }
 }

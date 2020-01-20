@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.ebookshop.model;
+package com.androidtutz.anushka.ebookshop.model.entities;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -62,6 +62,6 @@ public class Category extends BaseObservable {
     @NonNull
     @Override
     public String toString() {
-        return "Nome: " + categoryName + ". Description: " + categoryDescription;
+        return categoryName;
     }
 }

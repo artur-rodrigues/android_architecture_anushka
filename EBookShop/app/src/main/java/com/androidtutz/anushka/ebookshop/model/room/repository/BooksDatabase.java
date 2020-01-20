@@ -1,20 +1,23 @@
-package com.androidtutz.anushka.ebookshop.model;
+package com.androidtutz.anushka.ebookshop.model.room.repository;
 
 import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
+import com.androidtutz.anushka.ebookshop.model.entities.Book;
+import com.androidtutz.anushka.ebookshop.model.entities.Category;
+import com.androidtutz.anushka.ebookshop.model.room.dao.BookDAO;
+import com.androidtutz.anushka.ebookshop.model.room.dao.CategoryDAO;
+
 import io.reactivex.Completable;
-import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-@Database(entities = {Category.class,Book.class},version = 1)
+@Database(entities = {Category.class, Book.class},version = 1)
 public abstract class BooksDatabase extends RoomDatabase {
 
     public abstract CategoryDAO categoryDAO();
