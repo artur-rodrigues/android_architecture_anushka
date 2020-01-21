@@ -5,4 +5,7 @@
     <string name="hint_country">Insert Alpha 2 code here</string>
     <string name="menu_find">Find</string>
     <string name="menu_post">Post</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="id_is">Id is: %d</string>
 </resources>

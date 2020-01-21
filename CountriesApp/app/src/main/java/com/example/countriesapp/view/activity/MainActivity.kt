@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.doPost -> {
-
+                startActivity(Intent(this, PostActivity::class.java))
                 return true
             }
             else -> super.onOptionsItemSelected(item)
