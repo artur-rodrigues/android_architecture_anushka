@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">CountriesApp</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_submit">Submit</string>
+    <string name="hint_country">Insert Alpha 2 code here</string>
+    <string name="menu_find">Find</string>
+    <string name="menu_post">Post</string>
 </resources>
