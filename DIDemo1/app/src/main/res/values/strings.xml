@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DIDemo</string>
+    <string name="open_activity">Open Activity</string>
 </resources>
