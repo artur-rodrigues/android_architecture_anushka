@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ContactsAdapter contactsAdapter;
     private ArrayList<Contact> contactArrayList = new ArrayList<>();
-    private RecyclerView recyclerView;
     private ContactsAppDatabase contactsAppDatabase;
 
 
@@ -38,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(" Contacts Manager ");
 
-        recyclerView = findViewById(R.id.recycler_view_contacts);
-        contactsAppDatabase= Room.databaseBuilder(getApplicationContext(),ContactsAppDatabase.class,"ContactDB").build();
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_contacts);
+        contactsAppDatabase = Room.databaseBuilder(getApplicationContext(),ContactsAppDatabase.class,"ContactDB").build();
 
         new GetAllContactsAsyncTask().execute();
 
@@ -53,35 +52,23 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(contactsAdapter);
 
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addAndEditContacts(false, null, -1);
-            }
-
-
-        });
+        findViewById(R.id.fab)
+                .setOnClickListener(
+                        view -> addAndEditContacts(false, null, -1));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
-
-
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -106,24 +93,15 @@ public class MainActivity extends AppCompatActivity {
 
         alertDialogBuilderUserInput
                 .setCancelable(false)
-                .setPositiveButton(isUpdate ? "Update" : "Save", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
+                .setPositiveButton(isUpdate ? "Update" : "Save", (dialogBox, id) -> {
 
-                    }
                 })
                 .setNegativeButton("Delete",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
-
-                                if (isUpdate) {
-
-                                    deleteContact(contact, position);
-                                } else {
-
-                                    dialogBox.cancel();
-
-                                }
-
+                        (dialogBox, id) -> {
+                            if (isUpdate) {
+                                deleteContact(contact, position);
+                            } else {
+                                dialogBox.cancel();
                             }
                         });
 
@@ -131,76 +109,50 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog alertDialog = alertDialogBuilderUserInput.create();
         alertDialog.show();
 
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
+            if (TextUtils.isEmpty(newContact.getText().toString())) {
+                Toast.makeText(MainActivity.this, "Enter contact name!", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                alertDialog.dismiss();
+            }
 
-                if (TextUtils.isEmpty(newContact.getText().toString())) {
-                    Toast.makeText(MainActivity.this, "Enter contact name!", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    alertDialog.dismiss();
-                }
-
-
-                if (isUpdate && contact != null) {
-
-                    updateContact(newContact.getText().toString(), contactEmail.getText().toString(), position);
-                } else {
-
-                    createContact(newContact.getText().toString(), contactEmail.getText().toString());
-                }
+            if (isUpdate && contact != null) {
+                updateContact(newContact.getText().toString(), contactEmail.getText().toString(), position);
+            } else {
+                createContact(newContact.getText().toString(), contactEmail.getText().toString());
             }
         });
     }
 
     private void deleteContact(Contact contact, int position) {
-
         contactArrayList.remove(position);
-
         new DeleteContactAsyncTask().execute(contact);
-
     }
 
     private void updateContact(String name, String email, int position) {
-
         Contact contact = contactArrayList.get(position);
-
         contact.setName(name);
         contact.setEmail(email);
-
-
-
         new UpdateContactAsyncTask().execute(contact);
-
         contactArrayList.set(position, contact);
-
-
-
-
     }
 
     private void createContact(String name, String email) {
-
       new CreateContactAsyncTask().execute(new Contact(0,name,email));
-
     }
 
     private class GetAllContactsAsyncTask extends AsyncTask<Void,Void,Void>{
 
-
         @Override
         protected Void doInBackground(Void... voids) {
-
             contactArrayList.addAll(contactsAppDatabase.getContactDAO().getContacts());
             return null;
         }
 
-
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-
             contactsAdapter.notifyDataSetChanged();
         }
     }
@@ -208,23 +160,13 @@ public class MainActivity extends AppCompatActivity {
 
  private class CreateContactAsyncTask extends AsyncTask<Contact,Void,Void>{
 
-
-
      @Override
      protected Void doInBackground(Contact... contacts) {
-
          long id = contactsAppDatabase.getContactDAO().addContact(contacts[0]);
-
-
          Contact contact = contactsAppDatabase.getContactDAO().getContact(id);
-
          if (contact != null) {
-
              contactArrayList.add(0, contact);
-
-
          }
-
          return null;
      }
 
@@ -232,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
      @Override
      protected void onPostExecute(Void aVoid) {
          super.onPostExecute(aVoid);
-
          contactsAdapter.notifyDataSetChanged();
      }
  }
@@ -242,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
 
      @Override
      protected Void doInBackground(Contact... contacts) {
-
          contactsAppDatabase.getContactDAO().updateContact(contacts[0]);
          return null;
      }
@@ -258,9 +198,7 @@ public class MainActivity extends AppCompatActivity {
 
      @Override
      protected Void doInBackground(Contact... contacts) {
-
          contactsAppDatabase.getContactDAO().deleteContact(contacts[0]);
-
          return null;
      }
 
