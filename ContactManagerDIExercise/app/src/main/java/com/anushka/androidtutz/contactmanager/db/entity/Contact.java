@@ -9,7 +9,6 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity(tableName = "contacts")
 public class Contact {
 
-
     @ColumnInfo(name="contact_name")
     private String name;
 
@@ -20,20 +19,14 @@ public class Contact {
     @PrimaryKey(autoGenerate =true)
     private long id;
 
-
     @Ignore
-    public Contact() {
-    }
-
-
+    public Contact() {}
 
     public Contact(long id, String name, String email) {
-
         this.name = name;
         this.email = email;
         this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -58,6 +51,4 @@ public class Contact {
     public void setId(long id) {
         this.id = id;
     }
-
-
 }

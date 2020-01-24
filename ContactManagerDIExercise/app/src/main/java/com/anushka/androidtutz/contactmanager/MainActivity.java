@@ -1,10 +1,7 @@
 package com.anushka.androidtutz.contactmanager;
 
-import android.arch.persistence.room.Room;
-import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,24 +10,29 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.anushka.androidtutz.contactmanager.adapter.ContactsAdapter;
-import com.anushka.androidtutz.contactmanager.db.ContactsAppDatabase;
+import com.anushka.androidtutz.contactmanager.db.ContactDAO;
 import com.anushka.androidtutz.contactmanager.db.entity.Contact;
 
 import java.util.ArrayList;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
     private ContactsAdapter contactsAdapter;
     private ArrayList<Contact> contactArrayList = new ArrayList<>();
-    private ContactsAppDatabase contactsAppDatabase;
+//    private ContactsAppDatabase contactsAppDatabase;
+
+    @Inject
+    ContactDAO contactDAO;
 
 
     @Override
@@ -41,8 +43,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(" Contacts Manager ");
 
+        ((App) getApplication()).getComponent().inject(this);
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view_contacts);
-        contactsAppDatabase = Room.databaseBuilder(getApplicationContext(),ContactsAppDatabase.class,"ContactDB").build();
+//        contactsAppDatabase = Room.databaseBuilder(getApplicationContext(),ContactsAppDatabase.class,"ContactDB").build();
 
         new GetAllContactsAsyncTask().execute();
 
@@ -146,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            contactArrayList.addAll(contactsAppDatabase.getContactDAO().getContacts());
+            contactArrayList.addAll(contactDAO.getContacts());
             return null;
         }
 
@@ -162,8 +166,8 @@ public class MainActivity extends AppCompatActivity {
 
      @Override
      protected Void doInBackground(Contact... contacts) {
-         long id = contactsAppDatabase.getContactDAO().addContact(contacts[0]);
-         Contact contact = contactsAppDatabase.getContactDAO().getContact(id);
+         long id = contactDAO.addContact(contacts[0]);
+         Contact contact = contactDAO.getContact(id);
          if (contact != null) {
              contactArrayList.add(0, contact);
          }
@@ -183,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
 
      @Override
      protected Void doInBackground(Contact... contacts) {
-         contactsAppDatabase.getContactDAO().updateContact(contacts[0]);
+         contactDAO.updateContact(contacts[0]);
          return null;
      }
 
@@ -198,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
 
      @Override
      protected Void doInBackground(Contact... contacts) {
-         contactsAppDatabase.getContactDAO().deleteContact(contacts[0]);
+         contactDAO.deleteContact(contacts[0]);
          return null;
      }
 
