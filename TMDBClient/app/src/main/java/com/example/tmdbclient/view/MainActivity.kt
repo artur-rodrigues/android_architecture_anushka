@@ -2,12 +2,12 @@ package com.example.tmdbclient.view
 
 import android.content.Intent
 import android.content.res.Configuration
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.content.res.ResourcesCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.tmdbclient.R
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
     lateinit var viewModel: MainActivityViewModel
-    lateinit var movies: List<Movie>
+    lateinit var movies: PagedList<Movie>
     private val adapter = MovieAdapter {
         val intent = Intent(this, MovieActivity::class.java)
         intent.putExtra(MovieActivity.MOVIE, it)
@@ -43,11 +43,11 @@ class MainActivity : AppCompatActivity() {
         setUpBinding()
         setUpViewModel()
 
-        viewModel.fetchMovies(getString(R.string.api_key))
+//        viewModel.fetchMovies(getString(R.string.api_key))
     }
 
     private fun setUpViewModel() {
-        viewModel.status.observe(this, Observer {
+        viewModel.getStatus().observe(this, Observer {
             when(it) {
                 Status.Loading -> {
                     // Todo Show Progress
@@ -66,9 +66,14 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.movie.observe(this, Observer {
+        /*viewModel.getMovie().observe(this, Observer {
             this.movies = it
             this.adapter.movies = it
+        })*/
+
+        viewModel.moviesPagedList.observe(this, Observer {
+            movies = it
+            adapter.submitList(it)
         })
     }
 
@@ -88,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.swipe.setColorSchemeResources(R.color.colorPrimary)
         binding.swipe.setOnRefreshListener {
-            viewModel.fetchMovies(getString(R.string.api_key))
+//            viewModel.fetchMovies(getString(R.string.api_key))
         }
     }
 }

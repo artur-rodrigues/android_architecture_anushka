@@ -9,4 +9,8 @@ interface MovieDataService {
 
     @GET("movie/popular")
     suspend fun getPopularMovie(@Query("api_key") api: String): Response<MovieDBResponse>
+
+    @GET("movie/popular")
+    suspend fun getPagedPopularMovie(@Query("api_key") api: String,
+                                     @Query("page") page: Long): Response<MovieDBResponse>
 }
