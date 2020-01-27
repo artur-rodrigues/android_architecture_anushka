@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.ebookshop;
+package com.androidtutz.anushka.ebookshop.view.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.androidtutz.anushka.ebookshop.R;
 import com.androidtutz.anushka.ebookshop.databinding.ActivityAddAndEditBinding;
 import com.androidtutz.anushka.ebookshop.model.Book;
 

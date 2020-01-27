@@ -8,7 +8,7 @@
             type="android.widget.ArrayAdapter" />
         <variable
             name="secondaryClickHandler"
-            type="com.androidtutz.anushka.ebookshop.MainActivity.MainActivityClickHandlers" />
+            type="com.androidtutz.anushka.ebookshop.view.activity.MainActivity.MainActivityClickHandlers" />
 
     </data>
 
@@ -17,7 +17,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context=".view.activity.MainActivity"
     tools:showIn="@layout/activity_main"
     android:orientation="vertical"
     >

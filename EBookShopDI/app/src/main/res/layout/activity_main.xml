@@ -9,13 +9,13 @@
             type="android.widget.ArrayAdapter" />
         <variable
             name="clickHandlers"
-            type="com.androidtutz.anushka.ebookshop.MainActivity.MainActivityClickHandlers" />
+            type="com.androidtutz.anushka.ebookshop.view.activity.MainActivity.MainActivityClickHandlers" />
     </data>
 <android.support.design.widget.CoordinatorLayout
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.activity.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

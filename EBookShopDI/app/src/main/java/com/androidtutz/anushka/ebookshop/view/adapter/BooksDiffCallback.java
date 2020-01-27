@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.ebookshop;
+package com.androidtutz.anushka.ebookshop.view.adapter;
 
 import android.support.annotation.Nullable;
 import android.support.v7.util.DiffUtil;

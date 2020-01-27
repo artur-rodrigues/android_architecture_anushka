@@ -1,23 +1,33 @@
 package com.androidtutz.anushka.ebookshop.model;
 
-import android.app.Application;
 import android.arch.lifecycle.LiveData;
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class EBookShopRepository {
-   private CategoryDAO categoryDAO;
-   private BookDAO bookDAO;
-   private LiveData<List<Category>> categories;
-   private LiveData<List<Book>> books;
 
-    public EBookShopRepository(Application application) {
+    @Inject
+    CategoryDAO categoryDAO;
 
-        BooksDatabase booksDatabase=BooksDatabase.getInstance(application);
+    @Inject
+    BookDAO bookDAO;
+
+    private LiveData<List<Category>> categories;
+    private LiveData<List<Book>> books;
+
+    @Inject
+    public EBookShopRepository() {}
+
+    /*public EBookShopRepository(Context context) {
+
+        BooksDatabase booksDatabase=BooksDatabase.getInstance(context);
         categoryDAO=booksDatabase.categoryDAO();
         bookDAO=booksDatabase.bookDAO();
-    }
+    }*/
 
     public LiveData<List<Category>> getCategories() {
         return categoryDAO.getAllCategories();
@@ -27,12 +37,12 @@ public class EBookShopRepository {
         return bookDAO.getBooks(categoryId);
     }
 
-    public void insertCategory(Category category){
+    public void insertCategory(Category category) {
 
         new InsertCategoryAsyncTask(categoryDAO).execute(category);
     }
 
-    private static class InsertCategoryAsyncTask extends AsyncTask<Category,Void,Void>{
+    private static class InsertCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
         private CategoryDAO categoryDAO;
 
         public InsertCategoryAsyncTask(CategoryDAO categoryDAO) {
@@ -47,12 +57,12 @@ public class EBookShopRepository {
         }
     }
 
-    public void insertBook(Book book){
+    public void insertBook(Book book) {
 
         new InsertBookAsyncTask(bookDAO).execute(book);
     }
 
-    private static class InsertBookAsyncTask extends AsyncTask<Book,Void,Void>{
+    private static class InsertBookAsyncTask extends AsyncTask<Book, Void, Void> {
         private BookDAO bookDAO;
 
         public InsertBookAsyncTask(BookDAO bookDAO) {
@@ -67,12 +77,12 @@ public class EBookShopRepository {
         }
     }
 
-    public void deleteCategory(Category category){
+    public void deleteCategory(Category category) {
 
         new DeleteCategoryAsyncTask(categoryDAO).execute(category);
     }
 
-    private static class DeleteCategoryAsyncTask extends AsyncTask<Category,Void,Void>{
+    private static class DeleteCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
         private CategoryDAO categoryDAO;
 
         public DeleteCategoryAsyncTask(CategoryDAO categoryDAO) {
@@ -87,12 +97,12 @@ public class EBookShopRepository {
         }
     }
 
-    public void deleteBook(Book book){
+    public void deleteBook(Book book) {
 
         new DeleteBookAsyncTask(bookDAO).execute(book);
     }
 
-    private static class DeleteBookAsyncTask extends AsyncTask<Book,Void,Void>{
+    private static class DeleteBookAsyncTask extends AsyncTask<Book, Void, Void> {
         private BookDAO bookDAO;
 
         public DeleteBookAsyncTask(BookDAO bookDAO) {
@@ -107,12 +117,12 @@ public class EBookShopRepository {
         }
     }
 
-    public void updateCategory(Category category){
+    public void updateCategory(Category category) {
 
         new UpdateCategoryAsyncTask(categoryDAO).execute(category);
     }
 
-    private static class UpdateCategoryAsyncTask extends AsyncTask<Category,Void,Void>{
+    private static class UpdateCategoryAsyncTask extends AsyncTask<Category, Void, Void> {
         private CategoryDAO categoryDAO;
 
         public UpdateCategoryAsyncTask(CategoryDAO categoryDAO) {
@@ -127,12 +137,12 @@ public class EBookShopRepository {
         }
     }
 
-    public void updateBook(Book book){
+    public void updateBook(Book book) {
 
         new UpdateBookAsyncTask(bookDAO).execute(book);
     }
 
-    private static class UpdateBookAsyncTask extends AsyncTask<Book,Void,Void>{
+    private static class UpdateBookAsyncTask extends AsyncTask<Book, Void, Void> {
         private BookDAO bookDAO;
 
         public UpdateBookAsyncTask(BookDAO bookDAO) {

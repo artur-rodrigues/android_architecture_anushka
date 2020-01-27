@@ -5,7 +5,7 @@
     <data>
         <variable
             name="clickHandler"
-            type="com.androidtutz.anushka.ebookshop.AddAndEditActivity.AddAndEditActivityClickHandlers"/>
+            type="com.androidtutz.anushka.ebookshop.view.activity.AddAndEditActivity.AddAndEditActivityClickHandlers"/>
         <variable
             name="book"
             type="com.androidtutz.anushka.ebookshop.model.Book"/>

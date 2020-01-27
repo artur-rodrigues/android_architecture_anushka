@@ -1,4 +1,4 @@
-package com.androidtutz.anushka.ebookshop;
+package com.androidtutz.anushka.ebookshop.view.activity;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -7,28 +7,30 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
 
+import com.androidtutz.anushka.ebookshop.App;
+import com.androidtutz.anushka.ebookshop.R;
 import com.androidtutz.anushka.ebookshop.databinding.ActivityMainBinding;
 import com.androidtutz.anushka.ebookshop.model.Book;
 import com.androidtutz.anushka.ebookshop.model.Category;
+import com.androidtutz.anushka.ebookshop.view.adapter.BooksAdapter;
 import com.androidtutz.anushka.ebookshop.viewmodel.MainActivityViewModel;
+import com.androidtutz.anushka.ebookshop.viewmodel.factory.MainViewModelFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
     private BooksAdapter booksAdapter;
     private int selectedBookId;
 
+    @Inject
+    MainViewModelFactory factory;
+
     public static final int ADD_BOOK_REQUEST_CODE = 1;
     public static final int EDIT_BOOK_REQUEST_CODE = 2;
 
@@ -50,14 +55,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        ((App) getApplication()).getComponent().inject(this);
+
+        setSupportActionBar(activityMainBinding.toolbar);
+
         handlers = new MainActivityClickHandlers();
         activityMainBinding.setClickHandlers(handlers);
 
-        mainActivityViewModel = ViewModelProviders.of(this).get(MainActivityViewModel.class);
+        mainActivityViewModel = ViewModelProviders.of(this, factory).get(MainActivityViewModel.class);
 
         mainActivityViewModel.getAllCategories().observe(this, new Observer<List<Category>>() {
             @Override
@@ -65,14 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
                 categoriesList = (ArrayList<Category>) categories;
                 for (Category c : categories) {
-
                     Log.i("MyTAG", c.getCategoryName());
                 }
                 showOnSpinner();
             }
         });
-
-
     }
 
 
