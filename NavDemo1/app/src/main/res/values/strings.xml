@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">NavDemo1</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="goSecond">Go Second</string>
+    <string name="goFirst">Go First</string>
+    <string name="to_main">To main</string>
+    <string name="to_third">To Third</string>
 </resources>
