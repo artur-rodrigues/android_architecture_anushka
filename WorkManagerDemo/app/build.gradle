@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "com.androidtutz.anushka.workmanagerdemo"
         minSdkVersion 16
@@ -10,6 +11,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    dataBinding {
+        enabled true
+    }
+
     buildTypes {
         debug {
             debuggable true
@@ -24,6 +30,7 @@ android {
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
     }
 }
 
