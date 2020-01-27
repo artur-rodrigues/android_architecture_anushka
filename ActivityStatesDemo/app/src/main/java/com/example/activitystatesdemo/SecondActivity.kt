@@ -1,29 +1,20 @@
 package com.example.activitystatesdemo
 
-import android.content.Intent
-import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.example.activitystatesdemo.databinding.ActivityMainBinding
+import com.example.activitystatesdemo.databinding.ActivitySecondBinding
 import com.example.activitystatesdemo.utils.log
-import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class SecondActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivitySecondBinding
     private val activityName = this::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
         log("$activityName onCreate()")
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        setSupportActionBar(binding.toolbar)
-
-        binding.fab.setOnClickListener { view ->
-            startActivity(Intent(this, SecondActivity::class.java))
-        }
     }
 
     override fun onStart() {
@@ -59,17 +50,5 @@ class MainActivity : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         log("$activityName onRestart()")
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 }
