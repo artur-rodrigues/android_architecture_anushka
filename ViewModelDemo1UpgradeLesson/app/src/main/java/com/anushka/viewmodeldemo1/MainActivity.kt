@@ -1,29 +1,20 @@
-package com.anushka.bindingdemo3
+package com.anushka.viewmodeldemo1
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.anushka.bindingdemo3.databinding.ActivityMainBinding
+import com.anushka.viewmodeldemo1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
-
+    private var count = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-        binding.student = getStudent()
-        /*getStudent().run {
-            binding.apply {
-                nameText.text = name
-                emailText.text = email
-            }
-        }*/
-
-    }
-
-    private fun getStudent(): Student {
-        return Student(1, "Alex", "alex@gmail.com")
+        binding.countText.text = count.toString()
+        binding.button.setOnClickListener {
+            count++
+            binding.countText.text = count.toString()
+        }
     }
 }
