@@ -1,30 +1,44 @@
 package com.anushka.bindingdemo2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.ProgressBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.databinding.DataBindingUtil
+import com.anushka.bindingdemo2.databinding.ActivityMainBinding
+import com.anushka.bindingdemo2.utils.gone
+import com.anushka.bindingdemo2.utils.visible
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var button: Button
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        button = findViewById(R.id.control_button)
-        button.setOnClickListener {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.controlButton.setOnClickListener {
             startOrStopProgressBar()
         }
     }
 
+    private fun teste(): String {
+        return getString(R.string.start).also {
+            print(it)
+        }
+    }
+
     private fun startOrStopProgressBar() {
-        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-        if (progressBar.visibility == View.GONE) {
-            progressBar.visibility = View.VISIBLE
-            button.text = "Stop"
-        } else {
-            progressBar.visibility = View.GONE
-            button.text = "Start"
+        binding.controlButton.apply B@ {
+            binding.progressBar.apply P@ {
+                if (! isVisible) {
+                    visible()
+                    setText(R.string.stop)
+//                    this@B.setText(R.string.stop)
+                } else {
+                    gone()
+                    setText(R.string.start)
+//                    this@B.setText(R.string.start)
+                }
+            }
         }
     }
 }
