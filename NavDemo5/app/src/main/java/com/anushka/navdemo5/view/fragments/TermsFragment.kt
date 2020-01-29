@@ -1,4 +1,4 @@
-package com.anushka.navdemo5
+package com.anushka.navdemo5.view.fragments
 
 
 import android.os.Bundle
@@ -7,19 +7,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.anushka.navdemo5.databinding.FragmentNameBinding
+import com.anushka.navdemo5.R
+import com.anushka.navdemo5.databinding.FragmentTermsBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class NameFragment : Fragment() {
-    private lateinit var binding: FragmentNameBinding
+class TermsFragment : Fragment() {
+
+    private lateinit var binding: FragmentTermsBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_name, container, false)
+        binding = DataBindingUtil.inflate(inflater,
+            R.layout.fragment_terms, container, false)
         return binding.root
     }
 }
