@@ -4,11 +4,11 @@ class MyCalc : Calculations {
 
     private val pi = 3.14
 
-    override fun calculateCircumference(redius: Double): Double {
-        return 2 * pi * redius
+    override fun calculateCircumference(radius: Double): Double {
+        return 2 * pi * radius
     }
 
-    override fun calculateArea(redius: Double): Double {
-        return pi * redius * redius
+    override fun calculateArea(radius: Double): Double {
+        return pi * radius * radius
     }
 }

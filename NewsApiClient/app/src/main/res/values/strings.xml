@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewsApiClient</string>
+    <string name="news_head_lines">News Headlines</string>
+    <string name="saved_news">Saved News</string>
+</resources>

@@ -23,7 +23,7 @@
             android:ems="10"
             android:text="@={myViewModel.radius}"
             android:hint="@string/radius_of_the_circle"
-            android:inputType="textPersonName"
+            android:inputType="numberDecimal"
             android:textSize="20sp"
             android:textStyle="bold" />
         <Button

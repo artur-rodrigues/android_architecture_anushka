@@ -1,0 +1,266 @@
+{
+  "status": "ok",
+  "totalResults": 38,
+  "articles": [
+    {
+      "source": {
+        "id": "reuters",
+        "name": "Reuters"
+      },
+      "author": "Lucia Mutikani",
+      "title": "U.S. weekly jobless claims fall below 400000; private payrolls rise solidly - Reuters",
+      "description": "The number of Americans filing new claims for unemployment benefits dropped below 400,000 last week for the first time since the COVID-19 pandemic started more than a year ago, pointing to strengthening labor market conditions.",
+      "url": "https://www.reuters.com/world/us/us-weekly-jobless-claims-drop-below-400000-2021-06-03/",
+      "urlToImage": "https://www.reuters.com/resizer/Eq9B_z95kItsc2X86cdLgltw_EY=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/HKKP3BBCI5MWLF352EEMHOA7V4.jpg",
+      "publishedAt": "2021-06-03T14:14:00Z",
+      "content": "People line up outside a newly reopened career center for in-person appointments in Louisville, U.S., April 15, 2021. REUTERS/Amira Karaoud/File PhotoThe number of Americans filing new claims for une… [+5042 chars]"
+    },
+    {
+      "source": {
+        "id": "google-news",
+        "name": "Google News"
+      },
+      "author": null,
+      "title": "Jalen Rose on the differences between Trae Young and Stephen Curry | Get Up - ESPN",
+      "description": null,
+      "url": "https://news.google.com/__i/rss/rd/articles/CBMiK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9WnNYeXF2NTBBdTTSAQA?oc=5",
+      "urlToImage": null,
+      "publishedAt": "2021-06-03T14:02:54Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "WESH Orlando"
+      },
+      "author": null,
+      "title": "12-year-old accused in shootout with Volusia deputies to be held in secure detention - WESH 2 Orlando",
+      "description": "The boy and a 14-year-old girl are accused of shooting at deputies for hours on Tuesday. The 12-year-old is being held after finding probable cause on charges including attempted murder of law enforcement officers.",
+      "url": "https://www.wesh.com/article/12-year-old-volusia-shootout-deputies/36618409",
+      "urlToImage": "https://kubrick.htvapps.com/vidthumb/462afa0e-7bf2-45e3-a3a4-bd165d1a0721/462afa0e-7bf2-45e3-a3a4-bd165d1a0721_image.jpg?crop=1xw:1.0xh;center,top&resize=1200:*",
+      "publishedAt": "2021-06-03T13:30:00Z",
+      "content": "VOLUSIA COUNTY, Fla. —The 12-year-old boy accused of firing rounds at Volusia County deputies will be held in secure detention for 21 days.\r\nOn Thursday, the boy had his first court appearance in fro… [+2842 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "The Guardian"
+      },
+      "author": "Helen Davidson",
+      "title": "China bans extreme sports in wake of Gansu ultramarathon tragedy - The Guardian",
+      "description": "Authorities crack down on sports including trail running and wingsuit flying ahead of centenary celebrations",
+      "url": "https://amp.theguardian.com/lifeandstyle/2021/jun/03/china-bans-extreme-sports-in-wake-of-gansu-ultramarathon-tragedy",
+      "urlToImage": "https://i.guim.co.uk/img/media/cab08037ab23529091d8b10b88e96724ddd424a8/13_33_679_407/master/679.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=a94e2de9e2cf605274c0687bf904ad82",
+      "publishedAt": "2021-06-03T13:09:00Z",
+      "content": "China has indefinitely suspended extreme sports events, including ultramarathons, trail running and wingsuit flying, in response to the deaths of 21 long-distance runners in Gansu last month.\r\nExtrem… [+2962 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "PEOPLE"
+      },
+      "author": "Janine Puhak",
+      "title": "Lisa Kudrow Reveals Emotional Friends Reunion Moment Viewers May Have Missed - Yahoo Entertainment",
+      "description": "\"Well, Courteney comes in and burst into tears … and I grab a napkin or a tissue,” the actress said of a favorite moment from the Friends reunion special",
+      "url": "https://people.com/tv/lisa-kudrow-courteney-cox-matt-leblancs-emotional-friends-reunion-moment-fans-missed/",
+      "urlToImage": "https://s.yimg.com/uu/api/res/1.2/v16sX6hqTPz6v4T0D7GmOA--~B/aD0xMDAwO3c9MTUwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/people_218/f2df4ca79349c71b92e92117ea48b368",
+      "publishedAt": "2021-06-03T13:01:50Z",
+      "content": "Blink and you'll miss a moving moment in the Friends reunion special between Courteney Cox and Matt LeBlanc, Lisa Kudrow says.\r\nThe Feel Good star, 57, pointed out a quick, quiet interaction the two … [+2155 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "Laurie Kellman",
+      "title": "Netanyahu foes push for quick vote to end his 12-year rule - Associated Press",
+      "description": "TEL AVIV, Israel (AP) — Prime Minister Benjamin Netanyahu’s opponents pushed Thursday for a quick parliament vote to formally end his lengthy rule, hoping to head off any last-minute attempts to derail their newly announced coalition government.",
+      "url": "https://apnews.com/article/israel-politics-netanyahu-lapid-bennett-e96cc15e2474658e271e373cd4d6aeda",
+      "urlToImage": "https://storage.googleapis.com/afs-prod/media/25f0df97440c4fe686723d3aab5936a2/3000.jpeg",
+      "publishedAt": "2021-06-03T13:00:46Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "New York Times"
+      },
+      "author": "Farah Nayeri",
+      "title": "Cannes Film Festival Will Feature Sean Penn, Wes Anderson - The New York Times",
+      "description": "The Cannes Film Festival announced the movies that will vie for the Palme d’Or in July.",
+      "url": "https://www.nytimes.com/2021/06/03/movies/cannes-sean-penn.html",
+      "urlToImage": "https://static01.nyt.com/images/2021/06/03/business/03Cannes-Item/03Cannes-Item-facebookJumbo.jpg",
+      "publishedAt": "2021-06-03T12:46:44Z",
+      "content": "PARIS Sean Penn is a contender for the top prize at this years Cannes Film Festival, to be held from July 6 to 17, the organizers announced Thursday. In Flag Day, the actor-director plays a con man. … [+681 chars]"
+    },
+    {
+      "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+      },
+      "author": "Elinor Aspegren, Steven Vargas, John Bacon",
+      "title": "Anheuser-Busch offers to 'buy America's next round'; shots for shotguns in West Virginia vaccine lottery: Live COVID-19 updates - USA TODAY",
+      "description": "Anheuser-Busch will buy Americans beer when the US reaches the president's goal of 70% of adults at least partially vaccinated. Latest COVID-19 news.",
+      "url": "https://www.usatoday.com/story/news/health/2021/06/03/covid-vaccines-variants-travel-incentive-biden/7515972002/",
+      "urlToImage": "https://www.gannett-cdn.com/presto/2021/06/03/USAT/29100058-dba8-4c52-b52a-b9210da324d2-AP_Virus_Outbreak_Most_Hesitant.jpg?crop=5810,3268,x0,y573&width=3200&height=1680&fit=bounds",
+      "publishedAt": "2021-06-03T12:45:00Z",
+      "content": "Dr. Anthony Fauci's emails revealed his thoughts from April 2020. Here's what they tell us about the nations top infectious disease expert.\r\nUSA TODAY\r\nBrewing giant Anheuser-Busch will \"buy America'… [+6890 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "New York Post"
+      },
+      "author": "Associated Press",
+      "title": "Top-seed Ash Barty abruptly withdraws from French Open - New York Post ",
+      "description": "PARIS — Top-ranked Ash Barty was forced to retire from her second-round match at the French Open on Thursday because of an injury. The 2019 champion trailed 6-1, 2-2 when she returned to her chair …",
+      "url": "https://nypost.com/2021/06/03/ash-barty-abruptly-withdraws-from-french-open/",
+      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2021/06/barty.jpg?quality=90&strip=all&w=1200",
+      "publishedAt": "2021-06-03T12:39:00Z",
+      "content": "PARIS Top-ranked Ash Barty was forced to retire from her second-round match at the French Open on Thursday because of an injury.\r\nThe 2019 champion trailed 6-1, 2-2 when she returned to her chair and… [+2577 chars]"
+    },
+    {
+      "source": {
+        "id": "techcrunch",
+        "name": "TechCrunch"
+      },
+      "author": "Darrell Etherington",
+      "title": "United Airlines agrees to purchase 15 Boom supersonic airliners - TechCrunch",
+      "description": "United Airlines is the first official U.S. customer for Boom Supersonic, a company focused on making supersonic commercial flight a reality once again. Boom unveiled its supersonic sub-scale testing aircraft last year, and intends to start producing its Overt…",
+      "url": "http://techcrunch.com/2021/06/03/united-airlines-agrees-to-purchase-15-boom-supersonic-airliners/",
+      "urlToImage": "https://techcrunch.com/wp-content/uploads/2021/06/30K_4320x4320.jpg?w=688",
+      "publishedAt": "2021-06-03T12:26:43Z",
+      "content": "United Airlines is the first official U.S. customer for Boom Supersonic, a company focused on making supersonic commercial flight a reality once again. Boom unveiled its supersonic sub-scale testing … [+1412 chars]"
+    },
+    {
+      "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+      },
+      "author": "The Associated Press, Elisha Fieldstadt",
+      "title": "Texas valedictorian goes off script to address abortion rights - NBC News",
+      "description": "A Dallas high school valedictorian scrapped a speech approved by her school administrators and delivered an abortion rights call in its place. Paxton Smith",
+      "url": "https://www.nbcnews.com/news/us-news/texas-valedictorian-goes-script-address-abortion-rights-n1269464",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2021_22/3479916/210603-paxton-smith-al-0727.jpg",
+      "publishedAt": "2021-06-03T12:21:00Z",
+      "content": "DALLAS A Dallas high school valedictorian scrapped a speech approved by her school administrators and delivered an abortion rights call in its place.\r\nPaxton Smith, the 2021 valedictorian at Lake Hig… [+3509 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "Mia Jankowicz",
+      "title": "Trump advisors say he won't listen when they say he lost: report - Business Insider",
+      "description": "Trump is increasingly fixated on auditing the election, and even ad-libs references to it in his speeches, advisors told The Washington Post.",
+      "url": "https://www.businessinsider.com/trump-wont-listen-advisors-who-say-he-lost-report-2021-6",
+      "urlToImage": "https://i.insider.com/60b8b4d3bee0fc0019d5b0b1?width=1200&format=jpeg",
+      "publishedAt": "2021-06-03T12:07:02Z",
+      "content": "Former President Donald Trump has become increasingly fixated on overturning the 2020 election result, with one advisor saying that efforts to tell him that he lost are like \"p------ into the wind,\" … [+1714 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "MacRumors"
+      },
+      "author": "Hartley Charlton",
+      "title": "Apple Worked on Mac Tablet, 15-Inch MacBook Air, and iPod 'Super Nano,' Internal Email Shows - MacRumors",
+      "description": "Internal Apple emails have revealed that the company discussed offering a Mac tablet, a 15-inch MacBook Air model, an iPod \"Super nano,\" and...",
+      "url": "https://www.macrumors.com/2021/06/03/mac-tablet-larger-macbook-air-ipod-super-nano/",
+      "urlToImage": "https://images.macrumors.com/t/aOcZSQW4TD--Aqq8AarRQsYbDmo=/1600x/https://images.macrumors.com/article-new/2021/06/macbook-air-13-inch.jpg",
+      "publishedAt": "2021-06-03T12:00:13Z",
+      "content": "Internal Apple emails have revealed that the company discussed offering a Mac tablet, a 15-inch MacBook Air model, an iPod \"Super nano,\" and more.\r\nAn email shared by the Twitter account Internal Tec… [+2025 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Peter Schacknow",
+      "title": "Stocks making the biggest moves in the premarket: AMC, BlackBerry, Express, FireEye & more - CNBC",
+      "description": "The stocks making the biggest moves in premarket trading include AMC Entertainment, BlackBerry, Express, FireEye, and more.",
+      "url": "https://www.cnbc.com/2021/06/03/stocks-making-the-biggest-moves-in-the-premarket-amc-entertainment-blackberry-express-fireeye-more.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/106823109-1610469647565-gettyimages-1267398828-l1040631_2020082035935743.jpeg?v=1622720901",
+      "publishedAt": "2021-06-03T11:48:57Z",
+      "content": "Take a look at some of the biggest movers in the premarket:\r\nAMC Entertainment (AMC) AMC filed to sell up to 11.55 million common shares \"from time to time,\" according to a Securities and Exchange Co… [+3761 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "AppleInsider"
+      },
+      "author": "William Gallagher",
+      "title": "MagSafe has 'clinically significant' risk to cardiac devices, says American Heart Association - AppleInsider",
+      "description": "Apple MagSafe devices can interfere with pacemakers when placed directly over the skin, or in very close proximity, says the American Heart Association.",
+      "url": "https://appleinsider.com/articles/21/06/03/magsafe-has-clinically-significant-risk-to-cardiac-devices-says-american-heart-association",
+      "urlToImage": "https://photos5.appleinsider.com/gallery/42356-82173-000-lead-MagSafe-xl.jpg",
+      "publishedAt": "2021-06-03T11:16:52Z",
+      "content": "Apple MagSafe devices can interfere with pacemakers when placed directly over the skin, or in very close proximity, says the American Heart Association.\r\nThe Journal of the American Heart Association… [+2988 chars]"
+    },
+    {
+      "source": {
+        "id": "fox-news",
+        "name": "Fox News"
+      },
+      "author": "Associated Press",
+      "title": "Do vaccinated people need COVID-19 tests? - Fox News",
+      "description": "Do I need to get tested for COVID-19 if I'm vaccinated?",
+      "url": "https://www.foxnews.com/health/vaccinated-people-covid-19-tests",
+      "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2021/05/at-home-covid-test-iStock.jpg",
+      "publishedAt": "2021-06-03T11:09:51Z",
+      "content": "Do I need to get tested for COVID-19 if I'm vaccinated?\r\nNo, you can skip routine testing, with some exceptions.\r\nThe latest guidance from the U.S. Centers for Disease Control and Prevention says you… [+1828 chars]"
+    },
+    {
+      "source": {
+        "id": "cbs-news",
+        "name": "CBS News"
+      },
+      "author": "Sophie Lewis",
+      "title": "How to watch next week's rare \"ring of fire\" solar eclipse - CBS News",
+      "description": "Look up! But don't forget your solar eclipse glasses.",
+      "url": "https://www.cbsnews.com/news/solar-eclipse-ring-of-fire-how-to-watch/",
+      "urlToImage": "https://cbsnews1.cbsistatic.com/hub/i/r/2019/12/27/54745485-dea6-42e6-8720-f5d1f9137103/thumbnail/1200x630/1fd9faadc43d565ff609924aade56a2d/gettyimages-1190486985.jpg",
+      "publishedAt": "2021-06-03T11:07:46Z",
+      "content": "Last month's \"super flower blood moon\" lunar eclipse was hardly the only exciting celestial event of the season. Next week brings an even bigger spectacle — a rare \"ring of fire\" solar eclipse.\r\nOn J… [+2413 chars]"
+    },
+    {
+      "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+      },
+      "author": "Bill Bostock",
+      "title": "2 Iranian Navy ships are heading to the Americas, posing a potential provocation to the US, report says - Business Insider",
+      "description": "US officials believe the Iranian vessels are heading for Venezuela and will soon pass the rare milestone of the Atlantic Ocean, Politico reported.",
+      "url": "https://www.businessinsider.com/iranian-navy-ships-nearing-atlantic-us-provocation-biden-report-2021-6",
+      "urlToImage": "https://i.insider.com/60b8a833bee0fc0019d5b099?width=1200&format=jpeg",
+      "publishedAt": "2021-06-03T10:41:03Z",
+      "content": "Two mysterious Iranian Navy ships heading to the Americas are soon expected to enter the Atlantic Ocean, posing a new problem for the Biden administration, Politico reported.\r\nOn Saturday, the outlet… [+2062 chars]"
+    },
+    {
+      "source": {
+        "id": "nbc-news",
+        "name": "NBC News"
+      },
+      "author": "Yuliya Talmazan",
+      "title": "Canada pressured to find all unmarked Indigenous graves after children's remains found - NBC News",
+      "description": "After the remains of 215 children were discovered in unmarked graves at the Kamloops Indian Residential School in Canada, the country is grappling with one of the darkest chapters of its history.",
+      "url": "https://www.nbcnews.com/news/world/canada-pressured-find-all-unmarked-indigenous-graves-after-children-s-n1269456",
+      "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2021_22/3479236/210601-kamloops-mb-0849.JPG",
+      "publishedAt": "2021-06-03T10:41:00Z",
+      "content": "Canada has been dealt a somber reminder of one of the darkest chapters of its history over the past week.\r\nThe remains of 215 children were found buried in unmarked graves at a former residential sch… [+8442 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Ashley Strickland, CNN",
+      "title": "SpaceX ready to launch baby squid and water bears - CNN ",
+      "description": "SpaceX will launch a cargo resupply mission to the International Space Station on Thursday. The spacecraft will carry more than 7,300 pounds of supplies, including experiments involving baby squid and tardigrades, new solar panels, and even fresh fruit.",
+      "url": "https://www.cnn.com/2021/06/03/world/spacex-iss-tardigrade-squid-launch-scn/index.html",
+      "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/210526142130-01-iss-experiments-tardigrades-bobtail-squid-super-tease.jpeg",
+      "publishedAt": "2021-06-03T10:29:00Z",
+      "content": null
+    }
+  ]
+}
