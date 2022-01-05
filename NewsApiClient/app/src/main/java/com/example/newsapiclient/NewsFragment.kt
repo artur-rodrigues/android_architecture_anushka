@@ -17,6 +17,7 @@ import com.example.newsapiclient.data.util.Resource
 import com.example.newsapiclient.databinding.FragmentNewsBinding
 import com.example.newsapiclient.presentation.adapter.NewsAdapter
 import com.example.newsapiclient.presentation.viewmodel.NewsViewModel
+import kotlinx.coroutines.*
 
 class NewsFragment : Fragment() {
 
@@ -72,10 +73,35 @@ class NewsFragment : Fragment() {
                 return false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                TODO("Not yet implemented")
+            var job: Job? = null
+
+            // TODO Testar para ver se não chama mais de uma vez a searchNews
+            override fun onQueryTextChange(query: String?): Boolean {
+                query?.let {
+                    job?.cancel()
+                    job = null
+
+                    if (it.isEmpty()) {
+                        adapter.differ.submitList(arrayListOf())
+                        viewModel.getNewsHeadlines(country, page)
+                    } else {
+                        job = MainScope().launch {
+                            delay(2000)
+                            if (isActive) {
+                                viewModel.searchNews(country, it, page)
+                            }
+                        }
+                    }
+                }
+                return false
             }
         })
+
+        binding.svNews.setOnCloseListener {
+            adapter.differ.submitList(arrayListOf())
+            viewModel.getNewsHeadlines(country, page)
+            false
+        }
     }
 
     private fun viewNewsList() {
