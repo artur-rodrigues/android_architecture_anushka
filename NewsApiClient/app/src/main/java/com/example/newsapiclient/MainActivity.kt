@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var factory: NewsViewModelFactory
     @Inject
     lateinit var newsAdapter: NewsAdapter
+
     lateinit var viewModel: NewsViewModel
 
     private lateinit var binding: ActivityMainBinding

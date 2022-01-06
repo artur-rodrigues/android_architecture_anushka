@@ -17,6 +17,7 @@ import com.example.newsapiclient.data.util.Resource
 import com.example.newsapiclient.databinding.FragmentNewsBinding
 import com.example.newsapiclient.presentation.adapter.NewsAdapter
 import com.example.newsapiclient.presentation.viewmodel.NewsViewModel
+import com.example.newsapiclient.utils.navigateToInfoFragment
 import kotlinx.coroutines.*
 
 class NewsFragment : Fragment() {
@@ -46,11 +47,7 @@ class NewsFragment : Fragment() {
         viewModel = (activity as MainActivity).viewModel
         adapter = (activity as MainActivity).newsAdapter
         adapter.setItemClickedListener {
-            val bundle = Bundle().apply {
-                putSerializable("selected_article", it)
-            }
-
-            findNavController().navigate(R.id.action_newsFragment_to_infoFragment, bundle)
+            navigateToInfoFragment(it)
         }
         initRecyclerView()
         viewNewsList()
@@ -86,7 +83,7 @@ class NewsFragment : Fragment() {
                         viewModel.getNewsHeadlines(country, page)
                     } else {
                         job = MainScope().launch {
-                            delay(2000)
+                            delay(800)
                             if (isActive) {
                                 viewModel.searchNews(country, it, page)
                             }

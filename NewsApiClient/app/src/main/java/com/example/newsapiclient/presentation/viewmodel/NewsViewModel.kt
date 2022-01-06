@@ -1,22 +1,23 @@
 package com.example.newsapiclient.presentation.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.newsapiclient.data.model.APIResponse
+import com.example.newsapiclient.data.model.Article
 import com.example.newsapiclient.data.util.Resource
-import com.example.newsapiclient.domain.usecase.GetNewsHeadlinesUseCase
-import com.example.newsapiclient.domain.usecase.GetSearchedNewsUseCase
+import com.example.newsapiclient.domain.usecase.*
 import com.example.newsapiclient.utils.isNetworkAvailable
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class NewsViewModel(
     private val context: Application,
     private val getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase,
-    private val getSearchedNewsUseCase: GetSearchedNewsUseCase
+    private val getSearchedNewsUseCase: GetSearchedNewsUseCase,
+    private val saveNewsUseCase: SaveNewsUseCase,
+    private val getSavedNewsUseCase: GetSavedNewsUseCase,
+    private val deleteSavedNewsUseCase: DeleteSavedNewsUseCase
 ) : AndroidViewModel(context) {
 
     private val newsHeadlinesMutable: MutableLiveData<Resource<APIResponse>> = MutableLiveData()
@@ -37,7 +38,26 @@ class NewsViewModel(
         }
     }
 
-    private fun <T> execute(mutableLiveData: MutableLiveData<Resource<T>>, executable: suspend () -> Resource<T>) {
+    fun saveArticle(article: Article) {
+        viewModelScope.launch(Dispatchers.IO) {
+            saveNewsUseCase.execute(article)
+        }
+    }
+
+    fun getSavedNews() = liveData {
+        getSavedNewsUseCase.execute().collect { emit(it) }
+    }
+
+    fun deleteArticle(article: Article) {
+        viewModelScope.launch {
+            deleteSavedNewsUseCase.execute(article)
+        }
+    }
+
+    private fun <T> execute(
+        mutableLiveData: MutableLiveData<Resource<T>>,
+        executable: suspend () -> Resource<T>
+    ) {
         viewModelScope.launch(Dispatchers.IO) {
             mutableLiveData.postValue(Resource.Loading())
             try {

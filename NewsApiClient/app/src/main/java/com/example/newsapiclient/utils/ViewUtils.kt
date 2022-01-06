@@ -10,6 +10,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 
 fun View.show() {
     visibility = View.VISIBLE
@@ -41,4 +42,28 @@ fun ImageView.load(url: String?) {
     url?.let {
         Glide.with(context).load(it).into(this)
     }
+}
+
+fun View.snack(@StringRes message: Int, @StringRes actionMessage: Int? = null, action: () -> Unit = {}) {
+    val snack = Snackbar.make(this, message, Snackbar.LENGTH_LONG)
+
+    actionMessage?.let {
+        snack.setAction(actionMessage) {
+            action()
+        }
+    }
+
+    snack.show()
+}
+
+fun View.snack(message: String, actionMessage: String? = null, action: () -> Unit = {}) {
+    val snack = Snackbar.make(this, message, Snackbar.LENGTH_LONG)
+
+    actionMessage?.let {
+        snack.setAction(actionMessage) {
+            action()
+        }
+    }
+
+    snack.show()
 }

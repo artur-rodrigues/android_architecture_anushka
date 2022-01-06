@@ -1,16 +1,15 @@
 package com.example.newsapiclient.presentation.di
 
 import com.example.newsapiclient.domain.repository.NewsRepository
-import com.example.newsapiclient.domain.usecase.GetNewsHeadlinesUseCase
-import com.example.newsapiclient.domain.usecase.GetSearchedNewsUseCase
+import com.example.newsapiclient.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 class UseCaseModule {
 
     @Provides
@@ -23,5 +22,23 @@ class UseCaseModule {
     @Singleton
     fun providesGetSearchedNewsUseCase(repository: NewsRepository): GetSearchedNewsUseCase {
         return GetSearchedNewsUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun providesSaveNewsUseCase(repository: NewsRepository): SaveNewsUseCase {
+        return SaveNewsUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun providesGetSavedNewsUseCase(repository: NewsRepository): GetSavedNewsUseCase {
+        return GetSavedNewsUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun providesDeleteSavedNewsUseCase(repository: NewsRepository): DeleteSavedNewsUseCase {
+        return DeleteSavedNewsUseCase(repository)
     }
 }

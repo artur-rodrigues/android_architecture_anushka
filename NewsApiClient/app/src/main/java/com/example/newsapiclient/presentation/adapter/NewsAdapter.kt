@@ -57,7 +57,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
                 tvTitle.text = article.title
                 tvDescription.text = article.description
                 tvPublishedAt.text = article.publishedAt
-                tvSource.text = article.source.name
+                tvSource.text = article.source?.name
                 ivArticleImage.load(article.urlToImage)
                 root.setOnClickListener {
                     clickedItem?.let { it1 -> it1(article) }

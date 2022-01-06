@@ -2,4 +2,7 @@
     <string name="app_name">NewsApiClient</string>
     <string name="news_head_lines">News Headlines</string>
     <string name="saved_news">Saved News</string>
+    <string name="saved_successfully">Saved Successfully</string>
+    <string name="delete_successfully">Delete Successfully</string>
+    <string name="undo">Undo</string>
 </resources>
